@@ -24,18 +24,21 @@ Window {
             TextField {
                 id: textFieldIp
                 placeholderText: qsTr("Server IP")
+                color: "black"
                 Layout.fillWidth: true
                 onAccepted: buttonConnect.clicked()
             }
             TextField {
                 id: textFieldPort
                 placeholderText: qsTr("Server Port")
+                color: "black"
                 Layout.fillWidth: true
                 onAccepted: buttonConnect.clicked()
             }
             Button {
                 id: buttonConnect
                 text: qsTr("Connect")
+                palette.buttonText: "black"
                 onClicked: {
                     client.connectToHost(textFieldIp.text, textFieldPort.text)
                 }
@@ -48,7 +51,7 @@ Window {
             model: ListModel {
                 id: listModelMessages
                 ListElement {
-                    message: "Welcomne to client"
+                    message: "Welcome to client"
                 }
             }
             delegate: ItemDelegate {
@@ -60,12 +63,14 @@ Window {
             TextField {
                 id: textFieldMessage
                 placeholderText: qsTr("Your message...")
+                color: "black"
                 Layout.fillWidth: true
                 onAccepted: buttonSend.clicked()
             }
             Button {
                 id: buttonSend
                 text: qsTr("Send")
+                palette.buttonText: "black"
                 onClicked: {
                     client.sendMessage(textFieldMessage.text)
                     textFieldMessage.clear()

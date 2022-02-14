@@ -19,6 +19,10 @@ public slots:
 
 private:
     QTcpSocket _socket;
+    bool need_cryption_;
+
+private:
+    QString decrypt(const QString &message);
 
 private slots:
     void onConnected();
